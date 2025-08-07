@@ -1,7 +1,7 @@
 # Maintainer: Seunghun Kim <seunghunkim at proton dot me>
 pkgname=clipcascade-bin
-pkgver=3.0.0
-pkgrel=4
+pkgver=3.1.0
+pkgrel=1
 pkgdesc="ClipCascade: Sync clipboard across multiple devices"
 arch=('x86_64')
 url="https://github.com/Sathvik-Rao/ClipCascade"
@@ -25,7 +25,7 @@ depends=(
 makedepends=('unzip')
 source=(
     "$url/releases/download/$pkgver/ClipCascade_Linux.zip"
-    "clipcascade.png::https://raw.githubusercontent.com/Sathvik-Rao/ClipCascade/refs/tags/3.0.0/logo/logo.png"
+    "clipcascade.png::https://raw.githubusercontent.com/Sathvik-Rao/ClipCascade/refs/tags/3.1.0/logo/logo.png"
     "clipcascade.desktop"
     "fix-write-path.patch"
 )
