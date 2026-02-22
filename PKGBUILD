@@ -20,8 +20,9 @@ depends=(
     'python-beautifulsoup4'
     'python-aiortc'
     'python-ifaddr'
-    'xclip'
 )
+optdepends=('xclip: Xorg X Display Server support'
+            'wl-clipboard: Wayland Display Server support')
 makedepends=('unzip')
 source=(
     "$url/releases/download/$pkgver/ClipCascade_Linux.zip"
