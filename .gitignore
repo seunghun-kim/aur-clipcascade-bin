@@ -1,5 +1,6 @@
 *.zip
 *.pkg.tar.zst
 *.png
+pkg/
 src/
 test/
