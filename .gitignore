@@ -1,6 +1,11 @@
-*.zip
-*.pkg.tar.zst
-*.png
-pkg/
-src/
-test/
+*
+
+# Whitelist
+!.gitignore
+
+!.SRCINFO
+!clipcascade.desktop
+!clipcascade.sh
+!clipcascade-bin.install
+!fix-write-path.patch
+!PKGBUILD

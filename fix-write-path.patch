@@ -12,7 +12,7 @@ index a282cfb..349971c 100755
              try:
                  self.open_location(log_file_path)
 diff --git a/core/application.py b/core/application.py
-index b568168..f1f67e6 100755
+index 0424ca0..4934e0a 100755
 --- a/core/application.py
 +++ b/core/application.py
 @@ -39,17 +39,17 @@ class Application:
@@ -46,10 +46,10 @@ index b568168..f1f67e6 100755
                      try:
                          os.makedirs(app_dir)
 diff --git a/core/constants.py b/core/constants.py
-index 5551f5e..37f58e1 100755
+index 78c357a..084c50d 100755
 --- a/core/constants.py
 +++ b/core/constants.py
-@@ -159,3 +159,9 @@ def get_downloads_folder():
+@@ -260,3 +260,9 @@ def get_downloads_folder():
      - Linux: /home/<Username>/Downloads
      """
      return os.path.join(get_user_home_directory(), "Downloads")
@@ -59,12 +59,11 @@ index 5551f5e..37f58e1 100755
 +    Get the path to the user's configuration directory.
 +    """
 +    return os.path.join(get_user_home_directory(), ".clipcascade")
-\ No newline at end of file
 diff --git a/gui/tray.py b/gui/tray.py
-index ccd43a7..9ff1356 100755
+index d16a25a..fda102c 100755
 --- a/gui/tray.py
 +++ b/gui/tray.py
-@@ -290,7 +290,7 @@ class TaskbarPanel:
+@@ -294,7 +294,7 @@ class TaskbarPanel:
              subprocess.run(["xdg-open", path])
  
      def _open_logs(self, icon, item):
@@ -73,7 +72,7 @@ index ccd43a7..9ff1356 100755
          if os.path.exists(log_file_path):
              try:
                  self.open_location(log_file_path)
-@@ -348,16 +348,16 @@ class TaskbarPanel:
+@@ -352,16 +352,16 @@ class TaskbarPanel:
                      return
              except RuntimeError as re:
                  target_directory = os.path.join(
