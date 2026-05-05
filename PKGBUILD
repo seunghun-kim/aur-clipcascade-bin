@@ -1,7 +1,7 @@
 # Maintainer: Seunghun Kim <seunghunkim at proton dot me>
 pkgname=clipcascade-bin
 pkgver=3.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Sync clipboard across multiple devices"
 arch=('x86_64')
 url="https://github.com/Sathvik-Rao/ClipCascade"
@@ -30,8 +30,8 @@ provides=('clipcascade')
 conflicts=('clipcascade')
 install=clipcascade-bin.install
 source=(
-    "$url/releases/download/$pkgver/ClipCascade_Linux.zip"
-    "clipcascade.svg::https://raw.githubusercontent.com/Sathvik-Rao/ClipCascade/refs/tags/$pkgver/logo/logo.svg"
+    "ClipCascade_Linux-${pkgver}.zip::${url}/releases/download/${pkgver}/ClipCascade_Linux.zip"
+    "clipcascade-${pkgver}.svg::https://raw.githubusercontent.com/Sathvik-Rao/ClipCascade/refs/tags/${pkgver}/logo/logo.svg"
     "clipcascade.desktop"
     "clipcascade.sh"
     "fix-write-path.patch"
@@ -57,5 +57,5 @@ package() {
     install -Dm755 "${srcdir}/clipcascade.sh" "${pkgdir}/usr/bin/clipcascade"
     install -Dm644 "${srcdir}/ClipCascade/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
     install -Dm644 "${srcdir}/clipcascade.desktop" "${pkgdir}/usr/share/applications/clipcascade.desktop"
-    install -Dm644 "${srcdir}/clipcascade.svg" "${pkgdir}/usr/share/icons/hicolor/scalable/apps/clipcascade.svg"
+    install -Dm644 "${srcdir}/clipcascade-$pkgver.svg" "${pkgdir}/usr/share/icons/hicolor/scalable/apps/clipcascade.svg"
 }
